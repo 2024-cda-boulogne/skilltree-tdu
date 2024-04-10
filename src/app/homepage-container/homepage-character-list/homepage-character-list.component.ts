@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from '../../data-service.service';
+import { HoverService } from '../../hover.service';
 import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
@@ -14,7 +15,11 @@ import { CommonModule, NgFor } from '@angular/common';
 export class HomepageCharacterListComponent {
   chars: any;
 
-  constructor(private dataService: DataServiceService) {}
+  constructor(private dataService: DataServiceService, private hoverService: HoverService) {}
+
+  hoverOnUser(apprenantId: number | null) {
+    this.hoverService.hoverUser(apprenantId);
+  }
 
   async ngOnInit():Promise<void>
   {

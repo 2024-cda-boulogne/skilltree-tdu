@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { DataServiceService } from 'src/app/data-service.service';
-import { Data } from '@angular/router';
+import { HoverService } from 'src/app/hover.service';
 import { NgFor } from '@angular/common';
 
 @Component({
@@ -16,8 +17,12 @@ export class CharacterComponent {
   chars: any;
   timers: any;
   Math: Math = Math;
+
+  isHovered = false;
+  private subscription: Subscription = new Subscription();
+
   constructor(
-    private dataService: DataServiceService
+    private dataService: DataServiceService, private hoverService: HoverService
   )
   {
   }
@@ -40,6 +45,14 @@ export class CharacterComponent {
         "12.6",
         "13.6",
       ];
+
+      this.subscription = this.hoverService.hoveredApprenant$.subscribe((apprenantId) => {
+        
+      })
   }
   
+
+ngOnDestroy() {
+  this.subscription.unsubscribe();
+}
 }
