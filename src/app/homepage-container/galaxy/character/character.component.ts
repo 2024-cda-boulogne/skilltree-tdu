@@ -13,46 +13,43 @@ import { NgFor } from '@angular/common';
   styleUrls: ['./character.component.scss']
 })
 
-export class CharacterComponent {
+export class CharacterComponent implements OnInit, OnDestroy {
   chars: any;
   timers: any;
   Math: Math = Math;
 
-  isHovered = false;
+  hoveredUserId: number | null = null;
   private subscription: Subscription = new Subscription();
 
   constructor(
-    private dataService: DataServiceService, private hoverService: HoverService
-  )
-  {
+    private dataService: DataServiceService,
+    private hoverService: HoverService
+  ) { }
+  
+  async ngOnInit(): Promise<void> {
+    this.chars = await this.dataService.getAllApprenant();
+
+    this.timers = [
+      "11",
+      "12.4",
+      "13.2",
+      "14",
+      "12.5",
+      "13.4",
+      "14.2",
+      "12.8",
+      "13.5",
+      "14.4",
+      "12.6",
+      "13.6",
+    ];
+
+    this.subscription = this.hoverService.hoveredApprenant$.subscribe(apprenantId => {
+      this.hoveredUserId = apprenantId;
+    });
   }
   
-  async ngOnInit():Promise<void>
-  {
-      this.chars = await this.dataService.getAllApprenant();
-
-      this.timers = [
-        "11",
-        "12.4",
-        "13.2",
-        "14",
-        "12.5",
-        "13.4",
-        "14.2",
-        "12.8",
-        "13.5",
-        "14.4",
-        "12.6",
-        "13.6",
-      ];
-
-      this.subscription = this.hoverService.hoveredApprenant$.subscribe((apprenantId) => {
-        
-      })
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
-  
-
-ngOnDestroy() {
-  this.subscription.unsubscribe();
-}
 }

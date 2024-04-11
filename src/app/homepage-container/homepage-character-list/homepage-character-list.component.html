@@ -3,7 +3,8 @@
     <span></span>
     <h3 class="homepage-character-list-container-title">Liste des apprenants</h3>
 
-    <div *ngFor="let char of chars" (mouseenter)="hoverOnUser(char.id)" (mouseleave)="hoverOnUser(null)" ngClass="homepage-character-card-{{ char.id }}">
+    <div *ngFor="let char of chars" (mouseenter)="hoverOnUser(char.id)" (mouseleave)="hoverOnUser(null)"
+        ngClass="homepage-character-card-{{ char.id }}">
         <p class="homepage-character-card-name">{{ char.name }} {{ char.lastname }}</p>
 
     </div>

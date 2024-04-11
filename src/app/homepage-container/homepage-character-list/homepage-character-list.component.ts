@@ -14,11 +14,13 @@ import { CommonModule, NgFor } from '@angular/common';
 
 export class HomepageCharacterListComponent {
   chars: any;
+  
 
   constructor(private dataService: DataServiceService, private hoverService: HoverService) {}
 
   hoverOnUser(apprenantId: number | null) {
     this.hoverService.hoverUser(apprenantId);
+    console.log('hovered', apprenantId);
   }
 
   async ngOnInit():Promise<void>
