@@ -62,7 +62,7 @@ export class ConstellationContainerComponent {
   constructor(private router: Router, private dataService:DataServiceService, private route: ActivatedRoute,private renderer: Renderer2, )
   {
     this.warpSound = document.createElement('audio');
-    this.warpSound.setAttribute('src', "../../assets/sounds/warp.mp3");
+    this.warpSound.setAttribute('src', "assets/sounds/warp.mp3");
     this.warpSound.setAttribute('preload', "auto");
     this.soundsEnabled = document.querySelector(".mute-volume");
     this.route.params.subscribe( parms=> this.idApprenant = parms["id"]);

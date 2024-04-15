@@ -21,7 +21,7 @@ export class HomepageCharacterListComponent {
 
   constructor(private dataService: DataServiceService, private router: Router) {
     this.warpSound = document.createElement('audio');
-    this.warpSound.setAttribute('src', "../../assets/sounds/warp.mp3");
+    this.warpSound.setAttribute('src', "assets/sounds/warp.mp3");
     this.warpSound.setAttribute('preload', "auto");
     this.soundsEnabled = document.querySelector(".mute-volume");
   }
