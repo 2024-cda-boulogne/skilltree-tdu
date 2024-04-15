@@ -30,7 +30,7 @@ export class LockConstellationComponent {
 
 
   ngAfterViewInit(): void {
-    console.log('in');
+    // console.log('in');
     
     this.data.forEach((element:any) => {  
       switch(element.Competence.id){        

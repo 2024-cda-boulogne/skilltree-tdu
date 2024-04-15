@@ -50,7 +50,7 @@ export class StatComponent implements OnInit {
             this.competencesByActivity2 = this.competencesData.filter((competence: any) => competence.Competence.id >= 38 && competence.Competence.id <= 41);
             this.competencesByActivity3 = this.competencesData.filter((competence: any) => competence.Competence.id >= 42 && competence.Competence.id <= 44);
 
-            console.log(this.competencesByActivity1);
+            // console.log(this.competencesByActivity1);
 
           })
           .catch(error => {

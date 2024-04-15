@@ -30,13 +30,13 @@ export class CanvasComponent {
   {
     this.soundsEnabled = false;
     this.spaceAmbient = document.createElement('audio');
-    this.spaceAmbient.setAttribute('src', "../../assets/sounds/spaceambient.mp3");
+    this.spaceAmbient.setAttribute('src', "assets/sounds/spaceambient.mp3");
     this.spaceAmbient.loop = true;
     this.beamSound = document.createElement('audio');
-    this.beamSound.setAttribute('src', "../../assets/sounds/beam.mp3");
+    this.beamSound.setAttribute('src', "assets/sounds/beam.mp3");
     this.beamSound.setAttribute('preload', "auto");
     this.clickSound = document.createElement('audio');
-    this.clickSound.setAttribute('src', "../../assets/sounds/click.mp3");
+    this.clickSound.setAttribute('src', "assets/sounds/click.mp3");
     this.clickSound.setAttribute('preload', "auto");
     this.charSounds = [];
   }
@@ -80,7 +80,7 @@ export class CanvasComponent {
       {
         this.activityIsHover = true;
         this.activityHoverID = e.target.id.substring(9);
-        console.log(this.activityHoverID);
+        // console.log(this.activityHoverID);
         const activityStat = document.querySelector(`#stat-group-${this.activityHoverID}`);
         activityStat?.classList.toggle("activity-focus");
 
