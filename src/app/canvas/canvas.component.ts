@@ -60,7 +60,7 @@ export class CanvasComponent {
     for (let i = 0; i < 12; i++)
       {
         const sound = document.createElement('audio');
-        sound.setAttribute('src', "../../assets/sounds/menu.mp3");
+        sound.setAttribute('src', "assets/sounds/menu.mp3");
         sound.setAttribute('preload', "auto");
         this.charSounds.push(sound);
       }
