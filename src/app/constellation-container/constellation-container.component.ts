@@ -62,7 +62,7 @@ export class ConstellationContainerComponent {
   constructor(private router: Router, private dataService:DataServiceService, private route: ActivatedRoute,private renderer: Renderer2, )
   {
     this.warpSound = document.createElement('audio');
-    this.warpSound.setAttribute('src', "../../assets/sounds/warp.mp3");
+    this.warpSound.setAttribute('src', "assets/sounds/warp.mp3");
     this.warpSound.setAttribute('preload', "auto");
     this.soundsEnabled = document.querySelector(".mute-volume");
     this.route.params.subscribe( parms=> this.idApprenant = parms["id"]);
@@ -76,7 +76,7 @@ export class ConstellationContainerComponent {
     } catch (e) {
       console.error('error', e);
     }
-    console.log(this.data);
+    // console.log(this.data);
 
     this.data.forEach((row: any, index: number) => {
       // console.log("row= ", index, row['Competence']['title'], row['niveau']);  
@@ -178,10 +178,10 @@ export class ConstellationContainerComponent {
   }
 
   public showStar({string,event} :any): void{
-    console.log('id parent',string);
+    // console.log('id parent',string);
     const tooltip = document.querySelector('app-star-info');
     if (tooltip) {
-      console.log(event);
+      // console.log(event);
       
       this.renderer.setStyle(tooltip, 'display', 'block');
       this.renderer.setStyle(tooltip, 'position', 'absolute');
@@ -200,11 +200,11 @@ export class ConstellationContainerComponent {
 
       
       const row = this.data.find((e :any) => e.Competence.id == string)
-      console.log('row in const',row);
+      // console.log('row in const',row);
       
       if (row) {
         this.tooltipContent = row
-        console.log('tooltipContent',this.tooltipContent);
+        // console.log('tooltipContent',this.tooltipContent);
         
       }
   }
