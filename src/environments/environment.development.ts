@@ -1,4 +1,4 @@
 export const environment = {
-    supabaseUrl: 'https://vljbovzvmkqpeagmfgth.supabase.co',
-    supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZsamJvdnp2bWtxcGVhZ21mZ3RoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI1NjUyMjUsImV4cCI6MjAyODE0MTIyNX0.X2t2LqmL06Tpq4ZGDT2Jt2RHe6bR-66ezybKu2AI4zA'
+    supabaseUrl: 'https://supabase-skilltree.tduflos.ovh',
+    supabaseKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTczNjMzNDE4MCwiZXhwIjo0ODkyMDA3NzgwLCJyb2xlIjoiYW5vbiJ9.UDMNaKEXxOsS_HyTUVPzjC28lN44BVKSuZvq5WuzQ2U'
 };
